@@ -34,7 +34,7 @@ export default function Spread() {
           src="/kakao icon.png"
           width={26}
           height={24}
-          alt="foot"
+          alt="kakaologo"
         />
         <p className="font-semibold leading-[25.6px] text-[#3C1E1E]">
           카카오로 5초만에 시작하기
