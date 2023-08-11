@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Spread() {
   return (
-    <div className="flex h-full flex-col items-center py-[100px]">
+    <div className="relative flex h-full flex-col items-center py-[100px]">
       <p className="font-bold text-blue-2">청년 정책 후기 플랫폼</p>
       <h1 className="mt-2 text-5xl font-bold text-blue-0">청정구역</h1>
       <p className="mt-6">
@@ -28,7 +29,9 @@ export default function Spread() {
           />
         </div>
       </div>
-      <button className="absolute bottom-[100px] flex h-12 w-[calc(100%-50px)] max-w-[450px] items-center justify-center space-x-3 rounded-lg bg-[#FFE500] active:bg-[#FADA0A]">
+      <Link
+        href={'/spread/interview'}
+        className="absolute bottom-[100px] flex h-12 w-[calc(100%-50px)] items-center justify-center space-x-3 rounded-lg bg-[#FFE500] active:bg-[#FADA0A]">
         <Image
           className=""
           src="/kakao icon.png"
@@ -39,7 +42,7 @@ export default function Spread() {
         <p className="font-semibold leading-[25.6px] text-[#3C1E1E]">
           카카오로 5초만에 시작하기
         </p>
-      </button>
+      </Link>
     </div>
   );
 }
