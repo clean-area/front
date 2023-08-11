@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={notoSansKr.className}>
-        <main className="flex h-screen w-screen justify-center bg-white-0 text-body-0">
+        <main className="flex h-screen w-screen justify-center bg-white text-body-0">
           <div className="w-full max-w-[450px]">{children}</div>
         </main>
       </body>

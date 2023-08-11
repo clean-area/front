@@ -21,7 +21,20 @@ module.exports = {
         'blue-0': '#3592FF',
         'blue-2': '#82C3FF',
         'gray-1': '#F8F8FB',
+        'gray-2': '#F2F2F7',
         'gray-4': '#D1D1D6',
+        'gray-7': '#8E8E93',
+      },
+      animation: {
+        dungsil_1: 'dungsil 1.1s infinite linear',
+        dungsil_2: 'dungsil 1.3s infinite linear',
+        dungsil_3: 'dungsil 1.5s infinite linear',
+      },
+      keyframes: {
+        dungsil: {
+          '0%, 100%': { transform: 'translate(0%,10%)' },
+          '50%': { transform: 'translate(0%,20%)' },
+        },
       },
     },
   },
