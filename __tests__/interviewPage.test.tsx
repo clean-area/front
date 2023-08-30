@@ -1,4 +1,4 @@
-import Interview from '@/app/spread/interview/page';
+import Interview from '@/app/spread/meonji/page';
 import { userEvent } from '@storybook/testing-library';
 import {
   render,

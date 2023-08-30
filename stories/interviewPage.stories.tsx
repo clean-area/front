@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Interview from '../app/spread/interview/page';
+import Interview from '../app/spread/meonji/page';
 
 const meta = {
   title: 'Page/interviewPage',

@@ -24,6 +24,7 @@ module.exports = {
         'gray-2': '#F2F2F7',
         'gray-4': '#D1D1D6',
         'gray-7': '#8E8E93',
+        'gray-8': '#48484A',
       },
       animation: {
         dungsil_1: 'dungsil 1.1s infinite linear',
