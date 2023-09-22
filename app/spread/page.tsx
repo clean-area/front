@@ -30,7 +30,7 @@ export default function Spread() {
         </div>
       </div>
       <Link
-        href={'/spread/interview'}
+        href={'/spread/meonji'}
         className="absolute bottom-[100px] flex h-12 w-[calc(100%-50px)] items-center justify-center space-x-3 rounded-lg bg-[#FFE500] active:bg-[#FADA0A]">
         <Image
           className=""
