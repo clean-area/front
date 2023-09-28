@@ -17,8 +17,11 @@ import {
 } from '@/app/type/interview';
 import Pick from './PickAgeJob';
 import NextButton from './NextButton';
+import { useRouter } from 'next/navigation';
 
 export default function Interview() {
+  const router = useRouter();
+
   const [level, setLevel] = useState(0);
   const [isOpenAgeModal, setIsOpenAgeModal] = useState(false);
   const [isOpenJobModal, setIsOpenJobModal] = useState(false);
@@ -29,9 +32,13 @@ export default function Interview() {
 
   const [interests, setInterests] = useState<Interest[]>([]);
 
-  function fillInAll() {
+  function fillInAllGenderAge() {
     if (!gender || !age || !job) return false;
     return true;
+  }
+
+  function fillInAllInterest() {
+    return 0 < interests.length && interests.length < 5;
   }
 
   return (
@@ -40,7 +47,9 @@ export default function Interview() {
         <div className="flex min-h-[72px] items-center justify-center space-x-2 border-b-8 border-gray-1">
           <ProgressBar
             width={'70%'}
-            percent={((level + 2) / (questions.length + 2)) * 100}
+            percent={
+              ((level + questions.length) / (questions.length + 2)) * 100
+            }
           />
           <p className="text-xs text-gray-7">건너뛰기</p>
         </div>
@@ -137,15 +146,23 @@ export default function Interview() {
                 height={64}
               />
             </div>
-            <NextButton able={fillInAll()} onclick={() => setLevel(1)} />
+            <NextButton
+              able={fillInAllGenderAge()}
+              onclick={() => setLevel(1)}
+            />
           </>
         )}
 
         {level === 1 && (
           <>
             <div className="relative z-[20] mx-6 mt-10 flex flex-col items-center space-y-4 rounded-xl border-2 border-dashed border-gray-4 px-6 py-8">
-              <p className="absolute top-5 text-xs font-bold text-blue-0">
-                관심 분야 선택 (1-8개)
+              <p
+                className={`absolute top-5 text-xs font-bold ${
+                  interests.length < 5 ? 'text-blue-0' : 'text-danger-1'
+                }`}>
+                {interests.length < 5
+                  ? '관심 분야 선택 (1-8개)'
+                  : '4개까지만 선택할 수 있어요 🥲'}
               </p>
               <h1 className="text-lg font-semibold">
                 관심 분야를 선택해주세요
@@ -218,7 +235,10 @@ export default function Interview() {
                 height={64}
               />
             </div>
-            <NextButton able={fillInAll()} onclick={() => setLevel(1)} />
+            <NextButton
+              able={fillInAllInterest()}
+              onclick={() => router.push('/main?recommend=hihi')}
+            />
           </>
         )}
 
