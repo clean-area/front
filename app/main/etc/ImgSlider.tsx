@@ -1,7 +1,7 @@
 'use client';
 
+import useWindowSize from '@/app/hook/useWindowSize';
 import SimpleImageSlider from 'react-simple-image-slider';
-import useWindowSize from '../../hook/useWindowSize';
 
 const images = [
   {

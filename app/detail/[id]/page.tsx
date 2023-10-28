@@ -124,11 +124,6 @@ export default function DetailPage({ params }: DetailPageProps) {
         <p className="mb-[28px] text-center text-[14px] text-[#8E8E93]">
           <span className="text-[#3592FF]">4.7</span> / 5
         </p>
-        <Link href={'/writereview/2'}>
-          <button className="w-full rounded-[8px] bg-[#3592FF] py-[6px] text-[15px] font-semibold leading-[24px] text-[white]">
-            후기 작성하기
-          </button>
-        </Link>
       </div>
 
       <ReviewBox />
