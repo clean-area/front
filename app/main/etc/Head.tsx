@@ -4,6 +4,8 @@ import { useState } from 'react';
 import SubMenuBar from './SubMenuBar';
 import DropDownRequire from './DropDownRequire';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import ProfileOfHead from './ProfileOfHeader';
 
 const targets = [
   '대상선택',
@@ -22,17 +24,28 @@ const ages = ['연령선택', '19 - 24', '25 - 29', '30 - 34', '35 - 39'];
 export default function Head() {
   const [target, setTarget] = useState('대상선택');
   const [age, setAge] = useState('연령선택');
+  const pathname = usePathname();
 
   return (
     <div className="mb-[10px] flex flex-col space-y-[10px]">
       <div className="flex h-[32px] w-full items-center justify-between px-[25px]">
         <div className="space-x-[12px]">
-          <DropDownRequire
-            list={targets}
-            selected={target}
-            setSelected={setTarget}
-          />
-          <DropDownRequire list={ages} selected={age} setSelected={setAge} />
+          {!pathname.includes('communication') ? (
+            <>
+              <DropDownRequire
+                list={targets}
+                selected={target}
+                setSelected={setTarget}
+              />
+              <DropDownRequire
+                list={ages}
+                selected={age}
+                setSelected={setAge}
+              />
+            </>
+          ) : (
+            <ProfileOfHead />
+          )}
         </div>
         <Link href={'search'}>
           <svg

@@ -1,7 +1,5 @@
 import useQueryParam from '@/app/hook/useQueryParam';
 import { SubMenu } from '@/app/type/path';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 const menus: { name: string; href: SubMenu }[] = [
   { name: '전체', href: 'all' },
@@ -23,7 +21,7 @@ export default function SubMenuBar() {
           key={idx}
           onClick={() => setPartOfQueryParams(el.href)}
           className={`${
-            search === el.href
+            search === el.href || (!search && el.href === 'all')
               ? 'border-b-2 border-[#3592FF] opacity-100'
               : ' opacity-50'
           } shrink-0 grow-0 pb-1 text-[14px] font-semibold`}>

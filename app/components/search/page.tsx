@@ -5,7 +5,7 @@ import { useState } from 'react';
 import SearchInput from './etc/SearchInput';
 import PopularityPolicy from './etc/PopularityPolicy';
 import PopularitySearch from './etc/PopularitySearch';
-import BackButton from '../app/main/etc/BackButton';
+import BackButton from '@/app/main/etc/BackButton';
 
 export default function SearchPage() {
   const [search, setSearch] = useState('');

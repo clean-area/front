@@ -16,11 +16,13 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
+        title: '#1C1C1E',
         'body-0': '#3A3A3C',
         'white-0': '#F5F5F5',
         'blue-0': '#3592FF',
         'blue-1': '#E8F5FF',
         'blue-2': '#82C3FF',
+        'blue-4': '#1277EF',
         'gray-1': '#F8F8FB',
         'gray-2': '#F2F2F7',
         'gray-4': '#D1D1D6',
@@ -31,6 +33,7 @@ module.exports = {
         'yellow-1': '#FFF4DA',
         'yellow-5': '#EEAA00',
         'danger-1': '#FF3B30',
+        'profile-1': '#D9D9D9',
       },
       animation: {
         dungsil_1: 'dungsil 1.1s infinite linear',
